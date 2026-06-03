@@ -58,6 +58,7 @@ export default function (eleventyConfig: EleventyConfig) {
   });
 
   return {
+    pathPrefix: "/notes/",
     dir: {
       input: "src",
       output: "_site",
