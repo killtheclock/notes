@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="el" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Σκέψεις για τεχνολογία, design και code">
+  <title>MyBlog</title>
+
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+
+  <!-- Syntax highlight -->
+  <link rel="stylesheet" href="https://unpkg.com/@11ty/eleventy-plugin-syntaxhighlight@5/css/prism-night-owl.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MyBlog">
+  <meta property="og:description" content="Σκέψεις για τεχνολογία, design και code">
+  <meta property="og:type" content="website">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="MyBlog">
+</head>
+<body class="relative min-h-screen overflow-x-hidden">
+
+  <!-- Noise + grid texture -->
+  <div class="noise-overlay"></div>
+  <div class="grid-bg fixed inset-0 pointer-events-none z-0 opacity-60"></div>
+
+  <!-- Reading progress (post pages only) -->
+  
+
+  <!-- ── NAVBAR ── -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-7 h-7 rounded-lg bg-aurora-blue/20 border border-aurora-blue/30 flex items-center justify-center
+                    group-hover:bg-aurora-blue/30 transition-colors">
+          <svg class="w-4 h-4 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="font-display font-700 text-ghost-100 tracking-tight">MyBlog</span>
+      </a>
+
+      <!-- Nav links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="/" class="nav-link ">Αρχική</a>
+        <a href="/blog/" class="nav-link ">Άρθρα</a>
+        <a href="/tags/" class="nav-link active">Θέματα</a>
+        <a href="/about/" class="nav-link ">Σχετικά</a>
+      </nav>
+
+      <!-- CTA + mobile menu toggle -->
+      <div class="flex items-center gap-3">
+        <a href="/feed.xml" title="RSS Feed"
+           class="w-8 h-8 rounded-lg border border-white/10 bg-night-800/50 flex items-center justify-center
+                  text-ghost-400 hover:text-aurora-amber hover:border-aurora-amber/30 transition-all">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.18 15.64a2.18 2.18 0 010 4.36 2.18 2.18 0 010-4.36M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 006.18 7.27V4.44M4 10.1a9.9 9.9 0 019.9 9.9h-2.83a7.07 7.07 0 00-7.07-7.07V10.1z"/>
+          </svg>
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden w-8 h-8 rounded-lg border border-white/10 bg-night-800/50
+               flex items-center justify-center text-ghost-400 hover:text-ghost-100 transition-colors">
+          <svg id="menu-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-night-900/95 backdrop-blur-md">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
+        <a href="/"       class="nav-link text-base">Αρχική</a>
+        <a href="/blog/"  class="nav-link text-base">Άρθρα</a>
+        <a href="/tags/"  class="nav-link text-base">Θέματα</a>
+        <a href="/about/" class="nav-link text-base">Σχετικά</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar scroll effect -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('bg-night-950/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+      } else {
+        navbar.classList.remove('bg-night-950/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+      }
+    });
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="relative z-10 pt-20">
+    
+
+<section class="max-w-5xl mx-auto px-6 py-16">
+  <a href="/tags/" class="inline-flex items-center gap-2 text-sm text-ghost-500 hover:text-aurora-violet transition-colors mb-10 group">
+    <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+    </svg>
+    Όλα τα θέματα
+  </a>
+
+  <div class="mb-12">
+    <p class="font-mono text-xs text-aurora-violet tracking-widest mb-3">— ΘΕΜΑ</p>
+    <h1 class="font-display font-800 text-5xl text-ghost-100 mb-4 capitalize">typescript</h1>
+    <p class="text-ghost-400">1 άρθρα με αυτό το θέμα</p>
+  </div>
+
+  <div class="space-y-5">
+    
+    <a href="/posts/typescript-tips/" class="glass-card block p-6 group animate-on-scroll">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        
+        <span class="tag-pill badge-code text-xs">code</span>
+        
+        <time class="ml-auto font-mono text-xs text-ghost-500">5 Αυγούστου 2025</time>
+      </div>
+      <h2 class="font-display font-700 text-xl text-ghost-100 mb-2 group-hover:text-aurora-blue transition-colors">
+        TypeScript Tips που δεν διδάσκουν στα tutorials
+      </h2>
+      
+      <p class="text-sm text-ghost-400 leading-relaxed">Πρακτικές τεχνικές TypeScript που έμαθα την δύσκολη οδό — από real-world projects και production code που πρέπει να λειτουργεί.</p>
+      
+    </a>
+    
+  </div>
+</section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="relative z-10 mt-24 border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="font-display font-600 text-ghost-100 mb-1">MyBlog</p>
+          <p class="text-sm text-ghost-500">Σκέψεις για τεχνολογία, design και code</p>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="/feed.xml" class="text-sm text-ghost-500 hover:text-aurora-amber transition-colors">RSS</a>
+          <a href="/tags/" class="text-sm text-ghost-500 hover:text-aurora-blue transition-colors">Θέματα</a>
+          <a href="/about/" class="text-sm text-ghost-500 hover:text-aurora-blue transition-colors">Σχετικά</a>
+        </div>
+      </div>
+      <hr class="fancy-hr my-8">
+      <p class="text-xs text-ghost-500 text-center">
+        Φτιαγμένο με <a href="https://www.11ty.dev" class="text-aurora-blue hover:underline">Eleventy</a>,
+        <a href="https://tailwindcss.com" class="text-aurora-violet hover:underline">Tailwind CSS</a> &amp;
+        <span class="text-aurora-teal">TypeScript</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MyBlog</title>
+  <subtitle>Σκέψεις για τεχνολογία, design και code</subtitle>
+  <link href="https://yourdomain.com/feed.xml" rel="self"/>
+  <link href="https://yourdomain.com/"/>
+  <updated>2025-10-15T00:00:00Z</updated>
+  <id>https://yourdomain.com/</id>
+  
+  <entry>
+    <title>Γιατί το Eleventy είναι το καλύτερο SSG το 2025</title>
+    <link href="https://yourdomain.com/posts/eleventy-2025/"/>
+    <updated>2025-10-15T00:00:00Z</updated>
+    <id>https://yourdomain.com/posts/eleventy-2025/</id>
+    <content type="html"><h2>Τι κάνει το Eleventy ξεχωριστό</h2>
+<p>Το Eleventy (ή 11ty) έχει κερδίσει σταθερά δημοτικότητα τα τελευταία χρόνια, και υπάρχει λόγος γι' αυτό. Σε αντίθεση με frameworks που επιβάλλουν αρχιτεκτονικές αποφάσεις, το Eleventy σε αφήνει ελεύθερο.</p>
+<h2>Zero-JavaScript by Default</h2>
+<p>Ένα από τα πιο δυνατά χαρακτηριστικά: δεν στέλνει JavaScript στον browser εκτός αν το ζητήσεις εσύ. Αυτό σημαίνει:</p>
+<ul>
+<li>Γρηγορότατα sites</li>
+<li>Άριστο Core Web Vitals score</li>
+<li>Πλήρης έλεγχος του τελικού output</li>
+</ul>
+<h2>TypeScript Support στην v3</h2>
+<p>Η έκδοση 3 έφερε native TypeScript support για το configuration file. Πλέον μπορείς να γράφεις το <code>eleventy.config.ts</code> με πλήρη type safety.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> EleventyConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@11ty/eleventy"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span>eleventyConfig<span class="token operator">:</span> EleventyConfig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"myFilter"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>Συμπέρασμα</h2>
+<p>Αν ψάχνεις για ένα SSG που σέβεται την ελευθερία σου ως developer, το Eleventy είναι η απάντηση.</p>
+</content>
+  </entry>
+  
+  <entry>
+    <title>Dark Mode Design — Πέρα από το</title>
+    <link href="https://yourdomain.com/posts/dark-mode-design/"/>
+    <updated>2025-09-20T00:00:00Z</updated>
+    <id>https://yourdomain.com/posts/dark-mode-design/</id>
+    <content type="html"><h2>Το πρόβλημα με το &quot;απλό&quot; dark mode</h2>
+<p>Πολλοί designers απλώς αντιστρέφουν τα χρώματα: λευκό γίνεται μαύρο, μαύρο γίνεται λευκό. Αυτό όμως δημιουργεί μια ψευδή αίσθηση &quot;dark mode&quot; που στην πραγματικότητα κουράζει τα μάτια.</p>
+<h2>Η φιλοσοφία των επιπέδων</h2>
+<p>Στο σωστό dark mode, χρησιμοποιείς <strong>επίπεδα ανύψωσης</strong> (elevation):</p>
+<ul>
+<li><code>z=0</code> — Το βασικό background (σκοτεινότατο)</li>
+<li><code>z=1</code> — Cards και surfaces (+5-10% φωτεινότητα)</li>
+<li><code>z=2</code> — Modals και overlays (+15%)</li>
+<li><code>z=3</code> — Tooltips και dropdowns (+20%)</li>
+</ul>
+<h2>Χρώματα που λειτουργούν στο σκοτάδι</h2>
+<p>Τα κορεσμένα χρώματα (saturated) φαίνονται &quot;krzyk&quot; σε σκοτεινό φόντο. Πρέπει να μειώσεις τον κορεσμό και να αυξήσεις την φωτεινότητα:</p>
+<pre class="language-css"><code class="language-css"><span class="token comment">/* Λάθος */</span>
+<span class="token property">--accent</span><span class="token punctuation">:</span> #0000ff<span class="token punctuation">;</span> <span class="token comment">/* Πολύ έντονο */</span>
+
+<span class="token comment">/* Σωστό */</span>
+<span class="token property">--accent</span><span class="token punctuation">:</span> #7eb8f7<span class="token punctuation">;</span> <span class="token comment">/* Απαλό, ευανάγνωστο */</span></code></pre>
+<h2>Το grain effect</h2>
+<p>Ένα subtle noise texture στο background προσθέτει βάθος και μειώνει το &quot;flat&quot; αίσθημα. Ακριβώς αυτό κάνει και αυτό το blog!</p>
+</content>
+  </entry>
+  
+  <entry>
+    <title>TypeScript Tips που δεν διδάσκουν στα tutorials</title>
+    <link href="https://yourdomain.com/posts/typescript-tips/"/>
+    <updated>2025-08-05T00:00:00Z</updated>
+    <id>https://yourdomain.com/posts/typescript-tips/</id>
+    <content type="html"><h2>Branded Types για type safety</h2>
+<p>Το TypeScript δεν ξεχωρίζει <code>UserId</code> από <code>PostId</code> αν είναι και τα δύο <code>string</code>. Η λύση:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> <span class="token class-name">Brand<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">B</span><span class="token operator">></span></span> <span class="token operator">=</span> <span class="token constant">T</span> <span class="token operator">&amp;</span> <span class="token punctuation">{</span> <span class="token keyword">readonly</span> _brand<span class="token operator">:</span> <span class="token constant">B</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">type</span> <span class="token class-name">UserId</span> <span class="token operator">=</span> Brand<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token string">'UserId'</span><span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token keyword">type</span> <span class="token class-name">PostId</span> <span class="token operator">=</span> Brand<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token string">'PostId'</span><span class="token operator">></span><span class="token punctuation">;</span>
+
+<span class="token comment">// Τώρα αυτό δίνει error:</span>
+<span class="token keyword">function</span> <span class="token function">getUser</span><span class="token punctuation">(</span>id<span class="token operator">:</span> UserId<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token function">getUser</span><span class="token punctuation">(</span><span class="token string">"abc"</span> <span class="token keyword">as</span> PostId<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ❌ Error!</span></code></pre>
+<h2>Satisfies operator (TS 4.9+)</h2>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
+  port<span class="token operator">:</span> <span class="token number">3000</span><span class="token punctuation">,</span>
+  host<span class="token operator">:</span> <span class="token string">"localhost"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span> satisfies Record<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token operator">></span><span class="token punctuation">;</span>
+
+<span class="token comment">// config.port είναι number, όχι string | number</span></code></pre>
+<h2>Template Literal Types</h2>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> <span class="token class-name">EventName</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">on</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Capitalize<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token comment">// "onClick", "onSubmit", "onChange" ✓</span>
+<span class="token comment">// "click", "submit" ✗</span></code></pre>
+<p>Αυτές οι τεχνικές αλλάζουν τον τρόπο που γράφεις TypeScript — από defensive σε expressive.</p>
+</content>
+  </entry>
+  
+</feed>

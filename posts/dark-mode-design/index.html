@@ -1,0 +1,19 @@
+<h2>Το πρόβλημα με το &quot;απλό&quot; dark mode</h2>
+<p>Πολλοί designers απλώς αντιστρέφουν τα χρώματα: λευκό γίνεται μαύρο, μαύρο γίνεται λευκό. Αυτό όμως δημιουργεί μια ψευδή αίσθηση &quot;dark mode&quot; που στην πραγματικότητα κουράζει τα μάτια.</p>
+<h2>Η φιλοσοφία των επιπέδων</h2>
+<p>Στο σωστό dark mode, χρησιμοποιείς <strong>επίπεδα ανύψωσης</strong> (elevation):</p>
+<ul>
+<li><code>z=0</code> — Το βασικό background (σκοτεινότατο)</li>
+<li><code>z=1</code> — Cards και surfaces (+5-10% φωτεινότητα)</li>
+<li><code>z=2</code> — Modals και overlays (+15%)</li>
+<li><code>z=3</code> — Tooltips και dropdowns (+20%)</li>
+</ul>
+<h2>Χρώματα που λειτουργούν στο σκοτάδι</h2>
+<p>Τα κορεσμένα χρώματα (saturated) φαίνονται &quot;krzyk&quot; σε σκοτεινό φόντο. Πρέπει να μειώσεις τον κορεσμό και να αυξήσεις την φωτεινότητα:</p>
+<pre class="language-css"><code class="language-css"><span class="token comment">/* Λάθος */</span>
+<span class="token property">--accent</span><span class="token punctuation">:</span> #0000ff<span class="token punctuation">;</span> <span class="token comment">/* Πολύ έντονο */</span>
+
+<span class="token comment">/* Σωστό */</span>
+<span class="token property">--accent</span><span class="token punctuation">:</span> #7eb8f7<span class="token punctuation">;</span> <span class="token comment">/* Απαλό, ευανάγνωστο */</span></code></pre>
+<h2>Το grain effect</h2>
+<p>Ένα subtle noise texture στο background προσθέτει βάθος και μειώνει το &quot;flat&quot; αίσθημα. Ακριβώς αυτό κάνει και αυτό το blog!</p>
