@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+title: Όλα τα Άρθρα
+description: Όλες οι δημοσιεύσεις του blog
+---
+
+<section class="max-w-5xl mx-auto px-6 py-16">
+
+  <!-- Header -->
+  <div class="mb-16">
+    <p class="font-mono text-xs text-aurora-blue tracking-widest mb-3">— ΑΡΧΕΙΟ</p>
+    <h1 class="font-display font-800 text-5xl text-ghost-100 mb-4">Όλα τα Άρθρα</h1>
+    <p class="text-ghost-400 text-lg">{{ collections.posts | length }} δημοσιεύσεις συνολικά</p>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="flex flex-wrap items-center gap-2.5 mb-12" id="filter-bar">
+    <button class="tag-pill active" data-filter="all">Όλα</button>
+    {% for tag in collections.tagList %}
+    <button class="tag-pill" data-filter="{{ tag }}">{{ tag }}</button>
+    {% endfor %}
+  </div>
+
+  <!-- Posts list -->
+  <div class="space-y-5" id="posts-list">
+    {% for post in collections.posts %}
+    <a href="{{ post.url }}"
+       class="glass-card block p-6 md:p-8 group animate-on-scroll"
+       data-tags="{{ post.data.tags | join(',') }}"
+       data-category="{{ post.data.category }}">
+      <div class="flex flex-col md:flex-row md:items-start gap-4">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            {% if post.data.category %}
+            <span class="tag-pill badge-{{ post.data.category }} text-xs">{{ post.data.category }}</span>
+            {% endif %}
+            {% if post.data.tags %}
+              {% for tag in post.data.tags %}
+                {% if tag != "posts" %}
+                <span class="tag-pill text-xs">{{ tag }}</span>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <h2 class="font-display font-700 text-xl md:text-2xl text-ghost-100 mb-2 group-hover:text-aurora-blue transition-colors">
+            {{ post.data.title }}
+          </h2>
+          {% if post.data.description %}
+          <p class="text-ghost-400 text-sm leading-relaxed line-clamp-2">{{ post.data.description }}</p>
+          {% endif %}
+        </div>
+        <div class="flex md:flex-col items-center md:items-end gap-3 shrink-0">
+          <time class="font-mono text-xs text-ghost-500 whitespace-nowrap">
+            {{ post.date | readableDate }}
+          </time>
+          <svg class="w-5 h-5 text-ghost-600 group-hover:text-aurora-blue group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <!-- Empty state -->
+  <div id="empty-state" class="hidden text-center py-20">
+    <p class="text-ghost-500 text-lg mb-2">Δεν βρέθηκαν άρθρα</p>
+    <p class="text-ghost-600 text-sm">Δοκιμάστε διαφορετικό φίλτρο</p>
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll('[data-filter]');
+  const posts   = document.querySelectorAll('[data-tags]');
+  const empty   = document.getElementById('empty-state');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      posts.forEach(post => {
+        const tags = post.dataset.tags || '';
+        const cat  = post.dataset.category || '';
+        const show = filter === 'all' || tags.includes(filter) || cat === filter;
+        post.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      empty.classList.toggle('hidden', visible > 0);
+    });
+  });
+</script>
