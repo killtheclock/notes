@@ -2,16 +2,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MyBlog</title>
   <subtitle>Σκέψεις για τεχνολογία, design και code</subtitle>
-  <link href="https://killtheclock.github.io/notes//feed.xml" rel="self"/>
-  <link href="https://killtheclock.github.io/notes//"/>
+  <link href="https://yourdomain.com/feed.xml" rel="self"/>
+  <link href="https://yourdomain.com/"/>
   <updated>2025-10-15T00:00:00Z</updated>
-  <id>https://killtheclock.github.io/notes//</id>
+  <id>https://yourdomain.com/</id>
   
   <entry>
     <title>Γιατί το Eleventy είναι το καλύτερο SSG το 2025</title>
-    <link href="https://killtheclock.github.io/posts/eleventy-2025/"/>
+    <link href="https://yourdomain.com/posts/eleventy-2025/"/>
     <updated>2025-10-15T00:00:00Z</updated>
-    <id>https://killtheclock.github.io/posts/eleventy-2025/</id>
+    <id>https://yourdomain.com/posts/eleventy-2025/</id>
     <content type="html"><h2>Τι κάνει το Eleventy ξεχωριστό</h2>
 <p>Το Eleventy (ή 11ty) έχει κερδίσει σταθερά δημοτικότητα τα τελευταία χρόνια, και υπάρχει λόγος γι' αυτό. Σε αντίθεση με frameworks που επιβάλλουν αρχιτεκτονικές αποφάσεις, το Eleventy σε αφήνει ελεύθερο.</p>
 <h2>Zero-JavaScript by Default</h2>
@@ -37,9 +37,9 @@
   
   <entry>
     <title>Dark Mode Design — Πέρα από το</title>
-    <link href="https://killtheclock.github.io/posts/dark-mode-design/"/>
+    <link href="https://yourdomain.com/posts/dark-mode-design/"/>
     <updated>2025-09-20T00:00:00Z</updated>
-    <id>https://killtheclock.github.io/posts/dark-mode-design/</id>
+    <id>https://yourdomain.com/posts/dark-mode-design/</id>
     <content type="html"><h2>Το πρόβλημα με το &quot;απλό&quot; dark mode</h2>
 <p>Πολλοί designers απλώς αντιστρέφουν τα χρώματα: λευκό γίνεται μαύρο, μαύρο γίνεται λευκό. Αυτό όμως δημιουργεί μια ψευδή αίσθηση &quot;dark mode&quot; που στην πραγματικότητα κουράζει τα μάτια.</p>
 <h2>Η φιλοσοφία των επιπέδων</h2>
@@ -64,9 +64,9 @@
   
   <entry>
     <title>TypeScript Tips που δεν διδάσκουν στα tutorials</title>
-    <link href="https://killtheclock.github.io/posts/typescript-tips/"/>
+    <link href="https://yourdomain.com/posts/typescript-tips/"/>
     <updated>2025-08-05T00:00:00Z</updated>
-    <id>https://killtheclock.github.io/posts/typescript-tips/</id>
+    <id>https://yourdomain.com/posts/typescript-tips/</id>
     <content type="html"><h2>Branded Types για type safety</h2>
 <p>Το TypeScript δεν ξεχωρίζει <code>UserId</code> από <code>PostId</code> αν είναι και τα δύο <code>string</code>. Η λύση:</p>
 <pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> <span class="token class-name">Brand<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">B</span><span class="token operator">></span></span> <span class="token operator">=</span> <span class="token constant">T</span> <span class="token operator">&amp;</span> <span class="token punctuation">{</span> <span class="token keyword">readonly</span> _brand<span class="token operator">:</span> <span class="token constant">B</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
