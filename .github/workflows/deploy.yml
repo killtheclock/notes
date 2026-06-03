@@ -30,6 +30,9 @@ jobs:
       - name: Build Eleventy
         run: npx @11ty/eleventy
 
+      - name: Copy CSS to _site
+        run: mkdir -p _site/assets/css && cp src/assets/css/tailwind.css _site/assets/css/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
