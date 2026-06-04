@@ -7,7 +7,7 @@
   <title>{% if title %}{{ title }} — {% endif %}{{ site.title }}</title>
 
   <!-- Tailwind -->
-  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
 
   <!-- Syntax highlight -->
   <link rel="stylesheet" href="https://unpkg.com/@11ty/eleventy-plugin-syntaxhighlight@5/css/prism-night-owl.css">
@@ -126,6 +126,6 @@
   </footer>
 
   <!-- Global JS -->
-  <script src="/assets/js/main.js"></script>
+  <script src="{{ '/assets/js/main.js' | url }}"></script>
 </body>
 </html>
