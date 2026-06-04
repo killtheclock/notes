@@ -1,4 +1,5 @@
 ---
+layout: layouts/post.njk
 title: TypeScript Tips που δεν διδάσκουν στα tutorials
 description: Πρακτικές τεχνικές TypeScript που έμαθα την δύσκολη οδό — από real-world projects και production code που πρέπει να λειτουργεί.
 date: 2025-08-05

@@ -1,4 +1,5 @@
 ---
+layout: layouts/post.njk
 title: Γιατί το Eleventy είναι το καλύτερο SSG το 2025
 description: Μια βαθιά ματιά στο γιατί το Eleventy ξεχωρίζει από τα υπόλοιπα Static Site Generators και πώς μπορείς να το αξιοποιήσεις στο έπακρο.
 date: 2025-10-15
