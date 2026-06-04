@@ -33,6 +33,9 @@ jobs:
       - name: Copy CSS to _site
         run: mkdir -p _site/assets/css && cp src/assets/css/tailwind.css _site/assets/css/
 
+      - name: Copy admin config
+        run: cp src/admin/config.yml _site/admin/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
