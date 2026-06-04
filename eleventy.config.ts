@@ -60,7 +60,7 @@ export default function (eleventyConfig: EleventyConfig) {
   });
 
   return {
-    pathPrefix: "/notes/",
+    pathPrefix: process.env.PATHPREFIX || "/notes/",
     dir: {
       input: "src",
       output: "_site",
