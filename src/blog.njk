@@ -24,7 +24,7 @@ description: Όλες οι δημοσιεύσεις του blog
   <!-- Posts list -->
   <div class="space-y-5" id="posts-list">
     {% for post in collections.posts %}
-    <a href="{{ post.url }}"
+    <a href="/notes{{ post.url }}"
        class="glass-card block p-6 md:p-8 group animate-on-scroll"
        data-tags="{{ post.data.tags | join(',') }}"
        data-category="{{ post.data.category }}">

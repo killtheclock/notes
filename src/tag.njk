@@ -24,7 +24,7 @@ permalink: /tags/{{ tag | slugify }}/
 
   <div class="space-y-5">
     {% for post in tagPosts %}
-    <a href="{{ post.url }}" class="glass-card block p-6 group animate-on-scroll">
+    <a href="/notes{{ post.url }}" class="glass-card block p-6 group animate-on-scroll">
       <div class="flex flex-wrap items-center gap-2 mb-3">
         {% if post.data.category %}
         <span class="tag-pill badge-{{ post.data.category }} text-xs">{{ post.data.category }}</span>

@@ -89,7 +89,7 @@ layout: layouts/base.njk
   <!-- Featured first post (large) -->
   {% if featuredPosts[0] %}
   {% set post = featuredPosts[0] %}
-  <a href="{{ post.url }}" class="glass-card block p-8 mb-5 group animate-on-scroll">
+  <a href="/notes{{ post.url }}" class="glass-card block p-8 mb-5 group animate-on-scroll">
     <div class="flex flex-wrap items-center gap-3 mb-5">
       {% if post.data.category %}
       <span class="tag-pill badge-{{ post.data.category }}">{{ post.data.category }}</span>
@@ -122,7 +122,7 @@ layout: layouts/base.njk
   <div class="grid md:grid-cols-2 gap-5">
     {% for post in featuredPosts %}
     {% if loop.index > 1 %}
-    <a href="{{ post.url }}" class="glass-card block p-6 group animate-on-scroll">
+    <a href="/notes{{ post.url }}" class="glass-card block p-6 group animate-on-scroll">
       <div class="flex flex-wrap items-center gap-2 mb-4">
         {% if post.data.category %}
         <span class="tag-pill badge-{{ post.data.category }} text-xs">{{ post.data.category }}</span>
