@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="{{ site.title }}">
+  <link rel="alternate" type="application/rss+xml" href="/notes/feed.xml" title="{{ site.title }}">
 </head>
 <body class="relative min-h-screen overflow-x-hidden">
 
@@ -34,7 +34,7 @@
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
 
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2.5 group">
+      <a href="/notes/" class="flex items-center gap-2.5 group">
         <div class="w-7 h-7 rounded-lg bg-aurora-blue/20 border border-aurora-blue/30 flex items-center justify-center
                     group-hover:bg-aurora-blue/30 transition-colors">
           <svg class="w-4 h-4 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,15 +47,15 @@
 
       <!-- Nav links -->
       <nav class="hidden md:flex items-center gap-8">
-        <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Αρχική</a>
-        <a href="/blog/" class="nav-link {% if '/blog' in page.url %}active{% endif %}">Άρθρα</a>
-        <a href="/tags/" class="nav-link {% if '/tags' in page.url %}active{% endif %}">Θέματα</a>
-        <a href="/about/" class="nav-link {% if page.url == '/about/' %}active{% endif %}">Σχετικά</a>
+        <a href="/notes/" class="nav-link {% if page.url == '/' %}active{% endif %}">Αρχική</a>
+        <a href="/notes/blog/" class="nav-link {% if '/blog' in page.url %}active{% endif %}">Άρθρα</a>
+        <a href="/notes/tags/" class="nav-link {% if '/tags' in page.url %}active{% endif %}">Θέματα</a>
+        <a href="/notes/about/" class="nav-link {% if page.url == '/about/' %}active{% endif %}">Σχετικά</a>
       </nav>
 
       <!-- CTA + mobile menu toggle -->
       <div class="flex items-center gap-3">
-        <a href="/feed.xml" title="RSS Feed"
+        <a href="/notes/feed.xml" title="RSS Feed"
            class="w-8 h-8 rounded-lg border border-white/10 bg-night-800/50 flex items-center justify-center
                   text-ghost-400 hover:text-aurora-amber hover:border-aurora-amber/30 transition-all">
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
@@ -74,10 +74,10 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-night-900/95 backdrop-blur-md">
       <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
-        <a href="/"       class="nav-link text-base">Αρχική</a>
-        <a href="/blog/"  class="nav-link text-base">Άρθρα</a>
-        <a href="/tags/"  class="nav-link text-base">Θέματα</a>
-        <a href="/about/" class="nav-link text-base">Σχετικά</a>
+        <a href="/notes/"       class="nav-link text-base">Αρχική</a>
+        <a href="/notes/blog/"  class="nav-link text-base">Άρθρα</a>
+        <a href="/notes/tags/"  class="nav-link text-base">Θέματα</a>
+        <a href="/notes/about/" class="nav-link text-base">Σχετικά</a>
       </div>
     </div>
   </header>
@@ -111,9 +111,9 @@
           <p class="text-sm text-ghost-500">{{ site.description }}</p>
         </div>
         <div class="flex items-center gap-6">
-          <a href="/feed.xml" class="text-sm text-ghost-500 hover:text-aurora-amber transition-colors">RSS</a>
-          <a href="/tags/" class="text-sm text-ghost-500 hover:text-aurora-blue transition-colors">Θέματα</a>
-          <a href="/about/" class="text-sm text-ghost-500 hover:text-aurora-blue transition-colors">Σχετικά</a>
+          <a href="/notes/feed.xml" class="text-sm text-ghost-500 hover:text-aurora-amber transition-colors">RSS</a>
+          <a href="/notes/tags/" class="text-sm text-ghost-500 hover:text-aurora-blue transition-colors">Θέματα</a>
+          <a href="/notes/about/" class="text-sm text-ghost-500 hover:text-aurora-blue transition-colors">Σχετικά</a>
         </div>
       </div>
       <hr class="fancy-hr my-8">
