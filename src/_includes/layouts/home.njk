@@ -149,7 +149,7 @@ layout: layouts/base.njk
     <div class="flex flex-wrap gap-2.5">
       {% for tag in tagList %}
       {% set tagPosts = collections.posts | filterByTag(tag) %}
-      <a href="/tags/{{ tag | slugify }}/" class="tag-pill hover:badge-tech">
+      <a href="/notes/tags/{{ tag | slugify }}/" class="tag-pill hover:badge-tech">
         {{ tag }}
         <span class="ml-1.5 text-ghost-500">{{ tagPosts | length }}</span>
       </a>
