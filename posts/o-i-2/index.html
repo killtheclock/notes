@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="el" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Περιγραφη">
+  <title>Δοκιμη2 — MyBlog</title>
+
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="/notes/assets/css/tailwind.css">
+
+  <!-- Syntax highlight -->
+  <link rel="stylesheet" href="https://unpkg.com/@11ty/eleventy-plugin-syntaxhighlight@5/css/prism-night-owl.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Δοκιμη2">
+  <meta property="og:description" content="Περιγραφη">
+  <meta property="og:type" content="website">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" href="/notes/feed.xml" title="MyBlog">
+</head>
+<body class="relative min-h-screen overflow-x-hidden">
+
+  <!-- Noise + grid texture -->
+  <div class="noise-overlay"></div>
+  <div class="grid-bg fixed inset-0 pointer-events-none z-0 opacity-60"></div>
+
+  <!-- Reading progress (post pages only) -->
+  
+
+  <!-- ── NAVBAR ── -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="/notes/" class="flex items-center gap-2.5 group">
+        <div class="w-7 h-7 rounded-lg bg-aurora-blue/20 border border-aurora-blue/30 flex items-center justify-center
+                    group-hover:bg-aurora-blue/30 transition-colors">
+          <svg class="w-4 h-4 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="font-display font-700 text-ghost-100 tracking-tight">MyBlog</span>
+      </a>
+
+      <!-- Nav links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="/notes/" class="nav-link ">Αρχική</a>
+        <a href="/notes/blog/" class="nav-link ">Άρθρα</a>
+        <a href="/notes/tags/" class="nav-link ">Θέματα</a>
+        <a href="/notes/about/" class="nav-link ">Σχετικά</a>
+      </nav>
+
+      <!-- CTA + mobile menu toggle -->
+      <div class="flex items-center gap-3">
+        <a href="/notes/feed.xml" title="RSS Feed"
+           class="w-8 h-8 rounded-lg border border-white/10 bg-night-800/50 flex items-center justify-center
+                  text-ghost-400 hover:text-aurora-amber hover:border-aurora-amber/30 transition-all">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.18 15.64a2.18 2.18 0 010 4.36 2.18 2.18 0 010-4.36M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 006.18 7.27V4.44M4 10.1a9.9 9.9 0 019.9 9.9h-2.83a7.07 7.07 0 00-7.07-7.07V10.1z"/>
+          </svg>
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden w-8 h-8 rounded-lg border border-white/10 bg-night-800/50
+               flex items-center justify-center text-ghost-400 hover:text-ghost-100 transition-colors">
+          <svg id="menu-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-night-900/95 backdrop-blur-md">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
+        <a href="/notes/"       class="nav-link text-base">Αρχική</a>
+        <a href="/notes/blog/"  class="nav-link text-base">Άρθρα</a>
+        <a href="/notes/tags/"  class="nav-link text-base">Θέματα</a>
+        <a href="/notes/about/" class="nav-link text-base">Σχετικά</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar scroll effect -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('bg-night-950/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+      } else {
+        navbar.classList.remove('bg-night-950/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+      }
+    });
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="relative z-10 pt-20">
+    
+
+<article class="max-w-5xl mx-auto px-6 py-12">
+
+  <!-- Back link -->
+  <a href="/notes/blog/" class="inline-flex items-center gap-2 text-sm text-ghost-500 hover:text-aurora-blue transition-colors mb-10 group">
+    <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+    </svg>
+    Όλα τα άρθρα
+  </a>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12">
+
+    <!-- ── MAIN CONTENT ── -->
+    <div>
+      <!-- Post header -->
+      <header class="mb-12">
+        <!-- Tags -->
+        <div class="flex flex-wrap items-center gap-2.5 mb-6">
+          
+          <span class="tag-pill badge-life">life</span>
+          
+          
+            
+              
+            
+              
+              <a href="/notes/tags/math/" class="tag-pill hover:border-aurora-blue/30 hover:text-aurora-blue">
+                math
+              </a>
+              
+            
+              
+              <a href="/notes/tags/biology/" class="tag-pill hover:border-aurora-blue/30 hover:text-aurora-blue">
+                biology
+              </a>
+              
+            
+          
+        </div>
+
+        <h1 class="font-display font-800 text-4xl md:text-5xl text-ghost-100 leading-[1.1] tracking-tight mb-6">
+          Δοκιμη2
+        </h1>
+
+        
+        <p class="text-xl text-ghost-400 leading-relaxed mb-8">Περιγραφη</p>
+        
+
+        <!-- Meta row -->
+        <div class="flex flex-wrap items-center gap-5 text-sm text-ghost-500 pb-8 border-b border-white/5">
+          
+          <span class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded-full bg-aurora-blue/20 flex items-center justify-center text-xs text-aurora-blue">
+              K
+            </div>
+            ktc
+          </span>
+          
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <time datetime="2026-06-04">4 Ιουνίου 2026</time>
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            ~0.025 λεπτά ανάγνωση
+          </span>
+        </div>
+      </header>
+
+      <!-- Post body -->
+      <div class="post-content prose prose-invert max-w-none" id="post-body">
+        <p><em>δοκιμαστικό post</em></p>
+
+      </div>
+
+      <!-- Share section -->
+      <div class="mt-16 pt-8 border-t border-white/5">
+        <p class="font-display text-sm text-ghost-400 mb-4">Μοιραστείτε το άρθρο</p>
+        <div class="flex gap-3">
+          <a href="https://twitter.com/intent/tweet?text=%CE%94%CE%BF%CE%BA%CE%B9%CE%BC%CE%B72&url=https%3A%2F%2Fkilltheclock.github.io%2Fposts%2Fo-i-2%2F"
+             target="_blank" rel="noopener"
+             class="tag-pill hover:border-[#1DA1F2]/30 hover:text-[#1DA1F2]">
+            Twitter / X
+          </a>
+          <button onclick="navigator.clipboard.writeText(window.location.href); this.textContent='Αντιγράφηκε!'; setTimeout(()=>this.textContent='Αντιγραφή link',2000)"
+                  class="tag-pill cursor-pointer">
+            Αντιγραφή link
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="hidden lg:block">
+      <div class="sticky top-28 space-y-6">
+
+        <!-- Table of contents (auto-generated by JS) -->
+        <div class="glass-card p-6" id="toc-container" style="display:none">
+          <p class="font-mono text-xs text-aurora-blue tracking-widest mb-4">— ΠΕΡΙΕΧΟΜΕΝΑ</p>
+          <nav id="toc" class="space-y-1"></nav>
+        </div>
+
+        <!-- Post meta card -->
+        <div class="glass-card p-6">
+          <p class="font-mono text-xs text-aurora-violet tracking-widest mb-4">— ΛΕΠΤΟΜΕΡΕΙΕΣ</p>
+          <dl class="space-y-3 text-sm">
+            <div>
+              <dt class="text-ghost-500 mb-0.5">Ημερομηνία</dt>
+              <dd class="text-ghost-200">4 Ιουνίου 2026</dd>
+            </div>
+            
+            <div>
+              <dt class="text-ghost-500 mb-0.5">Κατηγορία</dt>
+              <dd><span class="tag-pill badge-life">life</span></dd>
+            </div>
+            
+            <div>
+              <dt class="text-ghost-500 mb-0.5">Χρόνος ανάγνωσης</dt>
+              <dd class="text-ghost-200">~0.025 λεπτά</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Tags card -->
+        
+        <div class="glass-card p-6">
+          <p class="font-mono text-xs text-aurora-teal tracking-widest mb-4">— TAGS</p>
+          <div class="flex flex-wrap gap-2">
+            
+              
+            
+              
+              <a href="/notes/tags/math/" class="tag-pill text-xs">math</a>
+              
+            
+              
+              <a href="/notes/tags/biology/" class="tag-pill text-xs">biology</a>
+              
+            
+          </div>
+        </div>
+        
+
+      </div>
+    </aside>
+  </div>
+<script src="https://giscus.app/client.js"
+        data-repo="killtheclock/notes"
+        data-repo-id="R_kgDOSwce-g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOSwce-s4C-eZt"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+</article>
+
+<script>
+  // Reading progress bar
+  const bar = document.getElementById('reading-progress');
+  const body = document.getElementById('post-body');
+  if (bar && body) {
+    window.addEventListener('scroll', () => {
+      const bodyTop = body.offsetTop;
+      const bodyH   = body.offsetHeight;
+      const scrolled = window.scrollY - bodyTop;
+      const pct = Math.min(100, Math.max(0, (scrolled / bodyH) * 100));
+      bar.style.width = pct + '%';
+    });
+  }
+
+  // Auto-generate TOC from headings
+  const tocContainer = document.getElementById('toc-container');
+  const toc          = document.getElementById('toc');
+  const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+
+  if (headings.length > 1 && toc && tocContainer) {
+    tocContainer.style.display = 'block';
+    headings.forEach((h, i) => {
+      if (!h.id) h.id = 'heading-' + i;
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      a.className = h.tagName === 'H2'
+        ? 'block text-sm text-ghost-400 hover:text-aurora-blue transition-colors py-0.5'
+        : 'block text-xs text-ghost-500 hover:text-aurora-blue transition-colors py-0.5 pl-3 border-l border-white/10';
+      toc.appendChild(a);
+    });
+
+    // Active TOC item on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          toc.querySelectorAll('a').forEach(a => a.classList.remove('text-aurora-blue'));
+          const active = toc.querySelector(`a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('text-aurora-blue');
+        }
+      });
+    }, { rootMargin: '-20% 0% -60% 0%' });
+    headings.forEach(h => observer.observe(h));
+  }
+</script>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="relative z-10 mt-24 border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="font-display font-600 text-ghost-100 mb-1">MyBlog</p>
+          <p class="text-sm text-ghost-500">Σκέψεις για τεχνολογία, design και code</p>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="/notes/feed.xml" class="text-sm text-ghost-500 hover:text-aurora-amber transition-colors">RSS</a>
+          <a href="/notes/tags/" class="text-sm text-ghost-500 hover:text-aurora-blue transition-colors">Θέματα</a>
+          <a href="/notes/about/" class="text-sm text-ghost-500 hover:text-aurora-blue transition-colors">Σχετικά</a>
+        </div>
+      </div>
+      <hr class="fancy-hr my-8">
+      <p class="text-xs text-ghost-500 text-center">
+        Φτιαγμένο με <a href="https://www.11ty.dev" class="text-aurora-blue hover:underline">Eleventy</a>,
+        <a href="https://tailwindcss.com" class="text-aurora-violet hover:underline">Tailwind CSS</a> &amp;
+        <span class="text-aurora-teal">TypeScript</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/notes/assets/js/main.js"></script>
+</body>
+</html>
