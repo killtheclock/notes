@@ -11,7 +11,7 @@ export default function (eleventyConfig: EleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/css/tailwind.css");
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
-
+  eleventyConfig.addPassthroughCopy("src/admin");
   // Collections
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi
