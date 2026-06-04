@@ -13,7 +13,7 @@ export default function (eleventyConfig: EleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
   eleventyConfig.addPassthroughCopy("src/admin/config.yml");
-
+ eleventyConfig.addPassthroughCopy("src/_redirects");
   // Collections
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi
