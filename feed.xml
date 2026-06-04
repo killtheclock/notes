@@ -8,30 +8,11 @@
   <id>https://killtheclock.github.io/notes//</id>
   
   <entry>
-    <title>Γιατί το Eleventy είναι το καλύτερο SSG το 2025</title>
+    <title>Δοκιμή</title>
     <link href="https://killtheclock.github.io/posts/eleventy-2025/"/>
     <updated>2025-10-15T00:00:00Z</updated>
     <id>https://killtheclock.github.io/posts/eleventy-2025/</id>
-    <content type="html"><h2>Τι κάνει το Eleventy ξεχωριστό</h2>
-<p>Το Eleventy (ή 11ty) έχει κερδίσει σταθερά δημοτικότητα τα τελευταία χρόνια, και υπάρχει λόγος γι' αυτό. Σε αντίθεση με frameworks που επιβάλλουν αρχιτεκτονικές αποφάσεις, το Eleventy σε αφήνει ελεύθερο.</p>
-<h2>Zero-JavaScript by Default</h2>
-<p>Ένα από τα πιο δυνατά χαρακτηριστικά: δεν στέλνει JavaScript στον browser εκτός αν το ζητήσεις εσύ. Αυτό σημαίνει:</p>
-<ul>
-<li>Γρηγορότατα sites</li>
-<li>Άριστο Core Web Vitals score</li>
-<li>Πλήρης έλεγχος του τελικού output</li>
-</ul>
-<h2>TypeScript Support στην v3</h2>
-<p>Η έκδοση 3 έφερε native TypeScript support για το configuration file. Πλέον μπορείς να γράφεις το <code>eleventy.config.ts</code> με πλήρη type safety.</p>
-<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> EleventyConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@11ty/eleventy"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span>eleventyConfig<span class="token operator">:</span> EleventyConfig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"myFilter"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h2>Συμπέρασμα</h2>
-<p>Αν ψάχνεις για ένα SSG που σέβεται την ελευθερία σου ως developer, το Eleventy είναι η απάντηση.</p>
+    <content type="html"><p>**** δοκιμή</p>
 </content>
   </entry>
   
