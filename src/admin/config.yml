@@ -3,6 +3,8 @@ backend:
   repo: killtheclock/notes
   branch: main
   base_url: https://sage-axolotl-c8f1fe.netlify.app
+  auth_endpoint: auth
+  site_id: 15c0583a-6e27-40c6-b27d-c237966d3916
 
 publish_mode: editorial_workflow
 
