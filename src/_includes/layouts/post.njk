@@ -27,7 +27,7 @@ layout: layouts/base.njk
           {% if tags %}
             {% for tag in tags %}
               {% if tag != "posts" %}
-              <a href="/tags/{{ tag | slugify }}/" class="tag-pill hover:border-aurora-blue/30 hover:text-aurora-blue">
+              <a href="/notes/tags/{{ tag | slugify }}/" class="tag-pill hover:border-aurora-blue/30 hover:text-aurora-blue">
                 {{ tag }}
               </a>
               {% endif %}
@@ -130,7 +130,7 @@ layout: layouts/base.njk
           <div class="flex flex-wrap gap-2">
             {% for tag in tags %}
               {% if tag != "posts" %}
-              <a href="/tags/{{ tag | slugify }}/" class="tag-pill text-xs">{{ tag }}</a>
+              <a href="/notes/tags/{{ tag | slugify }}/" class="tag-pill text-xs">{{ tag }}</a>
               {% endif %}
             {% endfor %}
           </div>
