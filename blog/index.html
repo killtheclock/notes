@@ -106,12 +106,14 @@
   <div class="mb-16">
     <p class="font-mono text-xs text-aurora-blue tracking-widest mb-3">— ΑΡΧΕΙΟ</p>
     <h1 class="font-display font-800 text-5xl text-ghost-100 mb-4">Όλα τα Άρθρα</h1>
-    <p class="text-ghost-400 text-lg">3 δημοσιεύσεις συνολικά</p>
+    <p class="text-ghost-400 text-lg">4 δημοσιεύσεις συνολικά</p>
   </div>
 
   <!-- Filter bar -->
   <div class="flex flex-wrap items-center gap-2.5 mb-12" id="filter-bar">
     <button class="tag-pill active" data-filter="all">Όλα</button>
+    
+    <button class="tag-pill" data-filter="biology">biology</button>
     
     <button class="tag-pill" data-filter="code">code</button>
     
@@ -125,6 +127,8 @@
     
     <button class="tag-pill" data-filter="javascript">javascript</button>
     
+    <button class="tag-pill" data-filter="maths">maths</button>
+    
     <button class="tag-pill" data-filter="tech">tech</button>
     
     <button class="tag-pill" data-filter="typescript">typescript</button>
@@ -137,6 +141,48 @@
 
   <!-- Posts list -->
   <div class="space-y-5" id="posts-list">
+    
+    <a href="/notes/posts/e-a/"
+       class="glass-card block p-6 md:p-8 group animate-on-scroll"
+       data-tags="posts,biology,maths"
+       data-category="tech">
+      <div class="flex flex-col md:flex-row md:items-start gap-4">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            
+            <span class="tag-pill badge-tech text-xs">tech</span>
+            
+            
+              
+                
+              
+                
+                <span class="tag-pill text-xs">biology</span>
+                
+              
+                
+                <span class="tag-pill text-xs">maths</span>
+                
+              
+            
+          </div>
+          <h2 class="font-display font-700 text-xl md:text-2xl text-ghost-100 mb-2 group-hover:text-aurora-blue transition-colors">
+            Ενα
+          </h2>
+          
+          <p class="text-ghost-400 text-sm leading-relaxed line-clamp-2">Δυο</p>
+          
+        </div>
+        <div class="flex md:flex-col items-center md:items-end gap-3 shrink-0">
+          <time class="font-mono text-xs text-ghost-500 whitespace-nowrap">
+            4 Ιουνίου 2026
+          </time>
+          <svg class="w-5 h-5 text-ghost-600 group-hover:text-aurora-blue group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </div>
+      </div>
+    </a>
     
     <a href="/notes/posts/eleventy-2025/"
        class="glass-card block p-6 md:p-8 group animate-on-scroll"
